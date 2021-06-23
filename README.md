@@ -56,6 +56,7 @@ Each type of shape will have its own input box(es) for getting size information,
   * Needs to call the constructor of its logical parent class
   * A square is a special type of rectangle
   * Can have methods that define behavior/calculations specific to Squares
+  
 * **Additional details:**
   * Clicking on any shape should call a method named describe(), which should update the statistics in the sidepanel in index.html
   * Double clicking on any shape should remove the shape from the screen
