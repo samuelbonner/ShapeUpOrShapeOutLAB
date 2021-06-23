@@ -138,9 +138,9 @@ class Circle extends Shape {
         shapeInfo.innerText = 'Shape Name: Circle';
         widthInfo.innerText = `Width: ${this.width}`;
         heightInfo.innerText = `Height: ${this.height}`;
-        radiusInfo.innerText = `Radius: ${circleRadius.value}`;
-        areaInfo.innerText = `Area: ${Math.floor(Math.PI * this.height * this.height)}`;
-        perimeterInfo.innerText = `Perimeter: ${Math.floor(2 * Math.PI * this.height)}`;
+        radiusInfo.innerText = `Radius: ${circleRadius.value / 2}`;
+        areaInfo.innerText = `Area: ${Math.floor(Math.PI * this.height/2 * this.height/2)}`;
+        perimeterInfo.innerText = `Perimeter: ${Math.floor(2 * Math.PI * (this.height/2))}`;
     }
 }
 
