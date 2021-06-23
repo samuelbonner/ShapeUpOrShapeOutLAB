@@ -58,6 +58,7 @@ Each type of shape will have its own input box(es) for getting size information,
   * Can have methods that define behavior/calculations specific to Squares
   
 * **Additional details:**
+
   * Clicking on any shape should call a method named describe(), which should update the statistics in the sidepanel in index.html
   * Double clicking on any shape should remove the shape from the screen
   * Every shape draws itself when it is created. The shape will be drawn according to the size specified when the shape was created, and the shape will be placed in a random location within the shape canvas

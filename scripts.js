@@ -45,34 +45,29 @@ const radiusInfo = document.getElementById('info-panel-radius');
 const areaInfo = document.getElementById('info-panel-area');
 const perimeterInfo = document.getElementById('info-panel-perimeter');
 
-// Used throughout to randomly place shapes
-function getRandomNumber() {
-    return Math.floor((Math.random() * 599)+1);
-};
-
-
 // overarching Shape class
 class Shape {
     constructor(width, height) {
         this.width = width;
         this.height = height;
+        // if function checks for valid shape parameters (less than 600px)
         if (this.width > 600 && this.height > 600) {
             alert('Shape is too wide and tall. Dimensions must be less than 600.');
         } else if (this.height > 600) {
             alert('Height is too tall! Must be less than 600!');
         } else if (this.width > 600) {
             alert('Width is too wide! Must be less than 600!');
-        } else {
+        } else { // runs if shape width/height is less than 600
             this.div = document.createElement('div');
             this.div.style.width = `${this.width}px`;
             this.div.style.height = `${this.height}px`;
             this.div.className = "shape";
             shapeContainer.appendChild(this.div);
-            let x = (getRandomNumber() - this.height);
-            let y = (getRandomNumber() - this.width);
+            let x = Math.floor(Math.random() * (600 - this.width));
+            let y = Math.floor(Math.random() * (600 - this.height));
             this.div.style.left = `${x}px`;
             this.div.style.top = `${y}px`;
-            this.div.addEventListener('dblclick', () => this.delete()); // method is right below This method gets inherited across every shape
+            this.div.addEventListener('dblclick', () => this.delete()); // method is right below. This method gets inherited across every shape.
             // getInfo method is individual in each class below since there are differences everytime
         };
 

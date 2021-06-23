@@ -44,22 +44,19 @@ h3 {
     text-align: center;
 }
 
-
-
 #info-panel {
-    /* position: relative; */
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     border: 1px solid black;
     width: 250px;
-    height: 600px;
+    height: 602px; /* Uses 602 to match draw-area height */
     background-color:aliceblue;
     margin: 0 1em;
     padding: 1em;
 }
-
 
 
 span {
@@ -70,15 +67,15 @@ span {
 
 #draw-area {
     position: relative;
-    height: 600px;
-    width: 600px;
+    height: 602px; /* Uses 602 to get a 'true' draw-area of 600px, allowing 2 px to get eaten by the border */
+    width: 602px; /* Uses 602 to get a 'true' draw-area of 600px, allowing 2 px to get eaten by the border */
     border: 1px solid black;
     background-color: aliceblue;
 }
 
 .shape {
     opacity: 75%;
-    /* position: relative; */
+    position: absolute;
 }
 
 .rectangle {
