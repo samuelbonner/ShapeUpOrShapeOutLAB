@@ -45,6 +45,11 @@ const radiusInfo = document.getElementById('info-panel-radius');
 const areaInfo = document.getElementById('info-panel-area');
 const perimeterInfo = document.getElementById('info-panel-perimeter');
 
+// Used throughout to randomly place shapes
+function getRandomNumber() {
+    return Math.floor((Math.random() * 599)+1);
+};
+
 
 // overarching Shape class
 class Shape {
@@ -67,13 +72,9 @@ class Shape {
             let y = (getRandomNumber() - this.width);
             this.div.style.left = `${x}px`;
             this.div.style.top = `${y}px`;
-            this.div.addEventListener('click', () => this.getInfo()); // method is right below
-            this.div.addEventListener('dblclick', () => this.delete()); // method is right below
+            this.div.addEventListener('dblclick', () => this.delete()); // method is right below This method gets inherited across every shape
+            // getInfo method is individual in each class below since there are differences everytime
         };
-
-    }
-
-    getInfo() { // Fills out Side Panel Info (has event listener above for single click)
 
     }
 
@@ -154,7 +155,7 @@ class Triangle extends Shape {
         super(width, height);
         if (this.div) {
             this.div.classList.add('triangle');
-            this.div.style.borderBottom = `${this.width}px solid yellow`;
+            this.div.style.borderBottom = `${this.width}px solid #ffc107`;
             this.div.style.borderRight = `${this.height}px solid transparent`;
             this.div.addEventListener('click', () => this.getInfo());
         }
@@ -162,7 +163,7 @@ class Triangle extends Shape {
     getInfo() {
         shapeInfo.innerText = 'Shape Name: Triangle';
         widthInfo.innerText = `Width: ${this.width}`;
-        heightInfo.innerText = `Width: ${this.height}`;
+        heightInfo.innerText = `Height: ${this.height}`;
         radiusInfo.innerText = `Radius: N/A`;
         areaInfo.innerText = `Area: ${.5 * this.height * this.height}`;
         perimeterInfo.innerText = `Perimeter: ${Math.floor((2 * this.height) + (Math.sqrt(2) * this.height))}`;
@@ -170,9 +171,6 @@ class Triangle extends Shape {
 }
 
 
-function getRandomNumber() {
-    return Math.floor((Math.random() * 599)+1);
-};
 
 
 // Button Click Listeners
@@ -191,7 +189,7 @@ circleButton.addEventListener('click', function newCircle() {
     new Circle(circleRadius.value, circleRadius.value);
 });
 
-triangleButton.addEventListener('click', function newCircle() {
+triangleButton.addEventListener('click', function newTriangle() {
     console.log("Triangle Button Clicked");
     new Triangle(triangleHeight.value, triangleHeight.value);
 });

@@ -14,9 +14,24 @@ body {
 .btn {
     margin: 1em;
     width: 66%;
+    opacity: 75%;
 }
 
+#circle-button{
+    color: white;
+    border-color: #6f42c1;
+    background-color:#6f42c1;
+}
 
+#circle-button:hover {
+    color: white;
+    border-color: #59359A;
+    background-color: #59359A;
+}
+
+#triangle-button{
+    color: white;
+}
 
 
 /* Main Container is for Side Panel Info & Draw Area */
@@ -54,7 +69,7 @@ span {
 
 
 #draw-area {
-    /* position: relative; */
+    position: relative;
     height: 600px;
     width: 600px;
     border: 1px solid black;
@@ -63,23 +78,24 @@ span {
 
 .shape {
     opacity: 75%;
-    position: relative;
+    /* position: relative; */
 }
 
 .rectangle {
-    background-color:seagreen;
+    background-color:#198754;
 }
 
 .square {
-    background-color: red;
+    background-color: #dc3545;
 }
 
 .circle {
-    background-color: rebeccapurple;
+    background-color: #6f42c1;
     border-radius: 50%;
 }
 
 .triangle {
-    border-bottom: 100px solid yellow;
-    border-right: 100px solid transparent;
+    border-color: #ffc107
+    /* border-bottom: 100px solid #ffc107;
+    border-right: 100px solid transparent; */
 }
